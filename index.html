@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slitter Separator Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================================== -->
+    <!-- HEADER: หัวข้อหลัก                                          -->
+    <!-- ========================================================== -->
+    <h1 id="mainTitle">Slitter Separator Setup (LS-06)</h1>
+
+    <!-- ========================================================== -->
+    <!-- กล่องที่ 1 (บน)                                            -->
+    <!-- ========================================================== -->
+    <div class="box box-top">
+
+        <!-- Machine -->
+        <div class="ctrl-item ctrl-vertical">
+            <label>Machine:</label>
+            <select id="machineLine">
+                <option value="LS-05">LS-05</option>
+                <option value="LS-06" selected>LS-06</option>
+                <option value="LS-08">LS-08</option>
+            </select>
+        </div>
+
+        <!-- Spec -->
+        <div class="ctrl-item ctrl-vertical">
+            <label>Spec:</label>
+            <select id="specList">
+                <option value="DEFAULT">DEFAULT</option>
+            </select>
+        </div>
+
+        <!-- Thickness -->
+        <div class="ctrl-item ctrl-vertical">
+            <label>Thickness:</label>
+            <select id="steelT"></select>
+        </div>
+
+        <!-- Disc T -->
+        <div class="ctrl-item ctrl-vertical">
+            <label>Disc T:</label>
+            <select id="diseT"></select>
+        </div>
+
+        <!-- Shoulder BB (สำคัญ: ต้องมี id="shoulderBB") -->
+        <div class="ctrl-item ctrl-vertical">
+            <label>Shoulder BB:</label>
+            <input type="text" id="shoulderBB" readonly>
+        </div>
+
+        <!-- Shoulder Recoiler (สำคัญ: ต้องมี id="shoulderRecoiler") -->
+        <div class="ctrl-item ctrl-vertical">
+            <label>Shoulder Recoiler:</label>
+            <input type="text" id="shoulderRecoiler" readonly>
+        </div>
+
+        <!-- ปุ่ม Calculate, Clear, Fullscreen -->
+        <div class="btn-group-inline">
+            <button id="btnCalculate">Calculate</button>
+            <button id="btnClear">Clear</button>
+            <button id="btnFullscreen">Fullscreen</button>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- กล่องที่ 2 (ล่าง)                                          -->
+    <!-- ========================================================== -->
+    <div class="box box-bottom">
+
+        <!-- 1. Re-coil -->
+        <span class="ctrl-item">
+            <label>1. <input type="checkbox" id="chkRecoil"> Re-coil</label>
+        </span>
+
+        <!-- 2. OD Cut Qty -->
+        <span class="ctrl-item">
+            <label>2. OD Cut Qty:
+                <select id="selOD">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="ตั้งเต็ม">ตั้งเต็ม</option>
+                </select>
+            </label>
+        </span>
+
+        <!-- 3. Knife -->
+        <span class="ctrl-item">
+            <label>3. <input type="checkbox" id="chkKnife"> Knife</label>
+            <select id="selKnife" disabled>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </span>
+
+        <!-- 4. Show Spacer -->
+        <span class="ctrl-item">
+            <label>4. <input type="checkbox" id="chkShowSpacer"> Show Spacer</label>
+        </span>
+
+        <!-- ปุ่มลูกศร LTR/RTL -->
+        <span class="ctrl-item direction-inline">
+          <button class="arrow-btn" data-direction="ltr">LTR ►</button>
+          <button class="arrow-btn" data-direction="rtl">◄ RTL</button>
+        </span>
+
+        <!-- Textarea -->
+        <span class="ctrl-item paste-area">
+            <textarea id="pasteArea" placeholder="วางข้อมูล เช่น 1219,0.4,248,248,248,248,GT"></textarea>
+        </span>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- กล่องที่ 3 : Canvas                                        -->
+    <!-- ========================================================== -->
+    <div id="displayArea">
+        <canvas id="slitterCanvas"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

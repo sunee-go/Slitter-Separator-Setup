@@ -1,0 +1,350 @@
+/* ================================================================
+   CSS สำหรับ Slitter Separator Setup
+   ================================================================ */
+
+/* ---------- Reset / พื้นฐาน ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #dde4ef;
+    padding: 5px;
+    color: #030810;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 18px;
+    color: #0f172a;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* ================================================================
+    กล่องทั่วไป
+   ================================================================ */
+.box {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    background: #c0baba;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    padding: 11px 18px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 1800px;
+    gap: 13px 20px;
+    min-height: 16px;
+}
+
+.box-top {
+    border-left: 16px solid #3b82f6;
+    align-items: flex-start;
+    gap: 8px 16px;
+}
+
+.box-bottom {
+    border-left: 16px solid #8b5cf6;
+    gap: 11px 19px;
+}
+
+.group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px 13px;
+}
+
+.group-1 { flex: 0 1 auto; }
+.group-3 {
+    flex: 0 0 auto;
+    border-left: 2px solid #1d6ed1;
+    padding-left: 13px;
+}
+
+.ctrl-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 8px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+}
+
+.ctrl-vertical label {
+    cursor: default;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #030e1d;
+    font-size: 14px;
+}
+
+.ctrl-vertical select,
+.ctrl-vertical input[readonly] {
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: 1.5px solid #94a3b8;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #074f98;
+    min-height: 27px;
+    width: 128px;
+    max-width: 100%;
+}
+
+.ctrl-vertical input[readonly] {
+    background: #055cd5;
+    text-align: center;
+    font-weight: 800;
+}
+
+.btn-group-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px 14px;
+    flex-wrap: nowrap;
+    padding-top: 14px;
+}
+
+.btn-group-inline button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #1164d0;
+    color: #1e293b;
+    min-height: 30px;
+    width: 128px;
+    white-space: nowrap;
+}
+
+.btn-group-inline button:hover {
+    background: #075ec8;
+    transform: scale(1.02);
+}
+
+#btnCalculate { background: #3b82f6; color: white; }
+#btnCalculate:hover { background: #2563eb; }
+#btnClear { background: #ef4444; color: white; }
+#btnClear:hover { background: #dc2626; }
+#btnFullscreen { background: #921cc5; color: white; }
+#btnFullscreen:hover { background: #7c3aed; }
+
+.ctrl-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+}
+
+.ctrl-item label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ctrl-item select,
+.ctrl-item input[type="text"] {
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1.5px solid #94a3b8;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: hsl(210, 40%, 98%);
+    min-height: 29px;
+    max-width: 100%;
+}
+
+.ctrl-item select:disabled { opacity: 0.6; }
+
+.ctrl-item input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.direction-inline {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-left: 2px solid #cbd5e1;
+    padding-left: 11px;
+    margin-left: 3px;
+    flex-wrap: nowrap;
+}
+
+.direction-inline .arrow-btn {
+    padding: 4px 11px;
+    border: 2px solid #94a3b8;
+    background: #f1f5f9;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 11px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.2s;
+    min-height: 29px;
+    white-space: nowrap;
+}
+
+.direction-inline .arrow-btn.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+}
+.direction-inline .arrow-btn:hover { background: #cbd5e1; }
+.direction-inline .arrow-btn.active:hover { background: #2563eb; }
+
+.ctrl-item.paste-area {
+    flex: 1 1 auto;
+    min-width: 128px;
+    max-width: 100%;
+    margin-left: auto;
+}
+
+.ctrl-item.paste-area textarea {
+    width: 100%;
+    height: 32px;
+    min-height: 32px;
+    max-height: 96px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #94a3b8;
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+    resize: vertical;
+    background: #f8fafc;
+    line-height: 1.6;
+    transition: border 0.2s;
+}
+
+.ctrl-item.paste-area textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+}
+
+/* ================================================================
+    Canvas
+   ================================================================ */
+#displayArea {
+    background: #acabae;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 10px;
+    margin-bottom: 16px;
+
+    /* ✅ ใช้ flex + ความสูงชัดเจน */
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    min-height: 550px;
+    width: 100%;
+    max-width: 1800px;
+    box-sizing: border-box;
+}
+
+#slitterCanvas {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: block;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+/* ================================================================
+    ✅ โหมดล็อคเต็มจอ (Pseudo-Fullscreen) — กด ESC ไม่หลุด
+   ================================================================ */
+#displayArea.locked-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* ================================================================
+    ✅ ปุ่มลอยสำหรับออกจากโหมดล็อค (แสดงเฉพาะตอนล็อค)
+   ================================================================ */
+#exitLockBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;              /* ✅ เปลี่ยนจาก top → bottom */
+    left: 20px;                /* ✅ เปลี่ยนจาก right → left */
+    z-index: 10001;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background: #dc2626;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    transition: all 0.2s;
+}
+
+#exitLockBtn:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
+
+#exitLockBtn:active {
+    transform: scale(0.98);
+}
+
+/* ================================================================
+    Media Query – จอเล็ก
+   ================================================================ */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .box {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .box::-webkit-scrollbar { height: 6px; }
+    .box::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+}
